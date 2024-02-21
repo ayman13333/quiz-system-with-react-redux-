@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addAnswer } from "../reducers/userQuestionsSlice";
+import { addAnswer,reset } from "../reducers/userQuestionsSlice";
 
 import "../App.css";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,10 @@ export default function QuestionsPage() {
     (state) => state.choices
   );
 
+  useEffect(()=>{
+    dispatch(reset());
+  },[]);
+
   function SubmitAnswer() {
     console.log(currentChoiceIndex.current);
     if (currentChoiceIndex.current == "") return;
@@ -29,8 +33,8 @@ export default function QuestionsPage() {
     currentChoiceIndex.current='';
     if(currentQuestionIndex == questions.length-1) navigate("/quizResults");
   }
-  console.log(questions);
-  console.log(userAnswers);
+//   console.log(questions);
+//   console.log(userAnswers);
 
   return (
     <div className="mx-auto my-auto">

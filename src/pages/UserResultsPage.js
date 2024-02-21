@@ -1,17 +1,18 @@
 import { useSelector } from "react-redux";
 
 export default function UserResultsPage() {
-    const { userAnswers } = useSelector(
+    const { userAnswers , totalScore } = useSelector(
         (state) => state.choices
       );
 
-      console.log(userAnswers);
+      console.log(totalScore);
 
   return (
     <div className="mx-auto my-auto">
+        <h4>Your TotalScore :<span className="mx-2">{`${totalScore} %`}</span> </h4>
         { userAnswers.map((answer,i)=>(
-            <>
-             <h3 key={i} className="my-4 w-200">{answer.question}</h3>
+            <div key={i}>
+             <h3  className="my-4 w-200">{answer.question}</h3>
              <div className="row">
                 {
                     answer.choices.map((c,index)=>(
@@ -20,7 +21,7 @@ export default function UserResultsPage() {
                 }
                
              </div>
-             </>
+             </div>
         ))}
 
    
