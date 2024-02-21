@@ -39,22 +39,25 @@
 
 .body{
   height: 80vh;
+  margin-top: 100px;
 }
 
 .choice{
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid darkgray;
   border-radius: 5px;
   font-size: large;
+  color: white;
+  background-color: darkgray;
 }
 
 .choice:hover{
   cursor: pointer;
-  background-color: darkgray;
+  background-color: rgba(118,113,51,41.45);
 }
 
 .selected{
-  background-color: darkgray;
+  background-color: rgba(118,113,51,41.45);
 }
 
 button{
@@ -62,4 +65,20 @@ button{
   border: 1px solid darkgray;
   border-radius: 5px;
   background-color: darkgray;
+}
+
+.answer{
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  font-size: large;
+  color: white;
+  background-color: darkgray;
+}
+
+.correctAnswer{
+  background-color: #198754;
+}
+
+.wrongAnswer{
+  background-color: red;
 }

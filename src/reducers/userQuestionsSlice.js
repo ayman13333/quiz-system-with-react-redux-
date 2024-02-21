@@ -10,8 +10,17 @@ const userQuestionsSlice=createSlice({
     },
     reducers:{
         addAnswer(state,action){
-            state.userAnswers=[...state.userAnswers,action.payload];
-            state.currentQuestionIndex++;
+            console.log('action.payload');
+            console.log(action.payload);
+           // let newAnswer=action.payload.userAnswer;
+            state.userAnswers=[...state.userAnswers,action.payload.userAnswer];
+            if(state.currentQuestionIndex == state.questions.length-1){
+                state.currentQuestionIndex=0;
+            }
+            else{
+                state.currentQuestionIndex++;
+            }
+            
         }
     }
 });
