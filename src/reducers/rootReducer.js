@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-//import counterReducer from './counterReducer';
+import choicesReducer from './userQuestionsSlice';
 
 const rootReducer = combineReducers({
-  //counter: counterReducer,
-  // Add other reducers here
+  choices:choicesReducer
 });
 
 export default rootReducer;
