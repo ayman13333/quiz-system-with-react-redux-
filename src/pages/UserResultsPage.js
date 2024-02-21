@@ -9,7 +9,11 @@ export default function UserResultsPage() {
 
   return (
     <div className="mx-auto my-auto">
-        <h4>Your TotalScore :<span className="mx-2">{`${totalScore} %`}</span> </h4>
+        <div className="d-flex justify-content-between">
+            <h4>Your Results</h4>
+        <h4>TotalScore :<span className="mx-2">{`${totalScore} %`}</span> </h4>
+        </div>
+        
         { userAnswers.map((answer,i)=>(
             <div key={i}>
              <h3  className="my-4 w-200">{answer.question}</h3>
