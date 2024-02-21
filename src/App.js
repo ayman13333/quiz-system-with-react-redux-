@@ -1,15 +1,23 @@
-import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import QuestionsPage from "./pages/QuestionsPage";
+import { Suspense } from "react";
+
 
 function App() {
-  const dispatch=useDispatch();
-  const reducer =useSelector(state=>state.choices);
-  console.log(reducer);
+  
   return (
-   <h1>done</h1>
+    <div className="container d-flex body">
+      <BrowserRouter>
+      <Suspense fallback="Loading .........."></Suspense>
+      <Routes>
+        <Route index element={<QuestionsPage />} />
+        <Route path="/quizResults" element="hhhhhhh" />
+      </Routes>
+      </BrowserRouter>
+      
+    </div>
+    
   );
 }
-
-
 
 export default App;
